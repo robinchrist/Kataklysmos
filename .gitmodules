@@ -1,0 +1,3 @@
+[submodule "external/seastar"]
+	path = external/seastar
+	url = https://github.com/scylladb/seastar.git
