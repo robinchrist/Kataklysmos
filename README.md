@@ -7,6 +7,9 @@ Work in progress, stay tuned!
 
 ## Building
 
+Make sure you've got a relatively recent cmake - At least 3.27 (November 2023!).
+Seastar requires at least 3.26 for the valgrind fix (https://github.com/scylladb/seastar/pull/2189) to work properly.
+
 Recommended build steps:
 ```
 git clone --recursive git@github.com:robinchrist/Kataklysmos.git
@@ -24,6 +27,8 @@ cd ../..
 mkdir build && cd build
 
 cmake -DCMAKE_CXX_COMPILER="clang++" -DCMAKE_C_COMPILER="clang" -DCMAKE_PREFIX_PATH="$(pwd)/../external/seastar/build/release;$(pwd)/../external/seastar/build/release/_cooking/installed" -DCMAKE_MODULE_PATH="$(pwd)/../external/seastar/cmake" -DCMAKE_BUILD_TYPE="Release" -GNinja -DCMAKE_EXPORT_COMPILE_COMMANDS="TRUE" ..
+
+ninja
 ```
 
 Notes:
